@@ -3,18 +3,16 @@ package guru.springframework.sfgdi.config;
 import guru.springframework.sfgdi.repositories.WolofGreetingRepository;
 import guru.springframework.sfgdi.repositories.WolofGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@ImportResource("classpath:sfgdi-config.xml")
 public class GreetingServiceConfig {
 
-    @Bean
+    /*@Bean
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
-    }
+    }*/
     @Bean
     @Primary
     PrimaryGreetingService primaryGreetingService() {
