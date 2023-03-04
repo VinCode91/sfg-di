@@ -1,5 +1,7 @@
 package guru.springframework.sfgdi.config;
 
+import guru.springframework.sfgdi.repositories.WolofGreetingRepository;
+import guru.springframework.sfgdi.repositories.WolofGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,9 +33,14 @@ public class GreetingServiceConfig {
     I18nFrenchGreetingService i18nFrenchGreetingService() {
         return new I18nFrenchGreetingService();
     }
+
+    @Bean
+    WolofGreetingRepository wolofGreetingRepository() {
+        return new WolofGreetingRepositoryImpl();
+    }
     @Profile({"SN", "default"})
     @Bean("i18nService")
-    I18nWolofGreetingService i18nWolofGreetingService() {
-        return new I18nWolofGreetingService();
+    I18nWolofGreetingService i18nWolofGreetingService(WolofGreetingRepository wolofGreetingRepository) {
+        return new I18nWolofGreetingService(wolofGreetingRepository);
     }
 }

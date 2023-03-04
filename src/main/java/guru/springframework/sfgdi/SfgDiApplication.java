@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"guru.springframework.sfgdi", "com.springframework.pets"})
+//@ComponentScan({"guru.springframework.sfgdi", "com.springframework.pets"})
 public class SfgDiApplication {
 
     public static void main(String[] args) {
