@@ -3,8 +3,19 @@ spring:
     active:
       - cat
       - FR
-      - qa
+      - dev
 guru:
   username: ymlUsername
   password: ymlPassword
   jdbcurl: ymlUrl
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+guru:
+  username: ymlProdUsername
+  password: ymlProdPassword
+  jdbcurl: ymlProdUrl
+
